@@ -3,10 +3,8 @@
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.io.*;
-/**
- *
- * @author Ather
- */
+
+//class contains the GUI Code. 
 public class MainWindow extends javax.swing.JFrame {
 
     /**
