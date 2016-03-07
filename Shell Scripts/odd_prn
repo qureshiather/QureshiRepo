@@ -1,0 +1,26 @@
+#!/bin/sh
+# odd_prn Ather Qureshi
+# echoes its shell script file name as well as the values of its odd arguments
+
+#print out command
+echo $0
+i=1
+#makes n an event number, so when it is divided by two, it will be a whole #
+n=`expr $# + 1`
+#loop continues as long as index is less than or equal to half the # of args
+while [ $i -le `expr $n / 2` ]
+do
+    #print out arguement 1
+    echo $1
+    #if at last argument, do not shift!
+    if [ $i -eq `expr $n / 2` ]
+       #if at last argument, there is nothing past $1, do not shift! 
+       then
+	   :
+    else
+	#shift by 2, thus arg(n) will now become arg(n-2).
+	shift 2
+     fi
+    #icrement index
+    i=`expr $i + 1`
+done

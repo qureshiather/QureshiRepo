@@ -1,0 +1,19 @@
+#!/bin/sh
+clear
+echo "Hello, $USER"
+echo
+
+echo "Today's date is `date`."
+echo
+'cal'
+echo
+echo "These users are currently connected:"
+w | cut -d " " -f 1 | grep -vi user | sort -u
+echo
+
+echo "This is `uname -s` running on a `uname -p` processor."
+echo
+
+echo "This is the uptime information:"
+uptime
+echo

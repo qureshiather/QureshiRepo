@@ -1,0 +1,12 @@
+#!/bin/sh
+# Timetable - prints out multipication table to 5
+for i in 1 2 3 4 5
+do
+    for j in 1 2 3 4 5
+	     do
+	     value=`expr $i \* $j`
+	     echo -n "$value "
+	  done
+	  echo
+    done
+	     

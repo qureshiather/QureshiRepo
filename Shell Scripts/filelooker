@@ -1,0 +1,6 @@
+#!/bin/sh
+# To look at files in a directory
+for filename in *
+do
+    echo $filename
+done

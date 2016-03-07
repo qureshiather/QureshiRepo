@@ -1,0 +1,6 @@
+#!/bin/sh
+# lastarg2 Ather Qureshi
+# shifts by the total number of arguments -1 (I want to keep the last one)
+shift `expr $# - 1`
+# if I have shifted through all arguements -1, in $1 should be the last arg
+echo "$1"

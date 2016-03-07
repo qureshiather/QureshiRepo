@@ -1,0 +1,33 @@
+#!/bin/sh
+echo "Please enter your name in all lowercase"
+read n
+case $n in
+    sagar)
+	echo "You are a faggot"
+	;;
+    uyen)
+	echo "You have boobies"
+	;;
+    ather)
+	echo "You are a god"
+	;;
+    wajahat)
+	echo "Gaurrie"
+	;;
+    waj)
+	echo "Guarrie"
+	;;
+    gurman)
+	echo "You are a faggot"
+	;;
+    zeerak)
+	echo "You are fat"
+	;;
+    sarosh)
+	echo "you are a fag"
+	;;
+    chong)
+	echo "You are a faggot who cries while chopping shit"
+	;;
+esac
+
