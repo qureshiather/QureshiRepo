@@ -5,4 +5,15 @@ Web Dev:
 
 
 Desktop Applications:
--Fun FitBit Facts for Friends (Currently in Dev, will be finished in late March) JAVA
+
+
+Mobile Application:
+
+Algorithmic:
+-This folder contains projects I have made utlizing various data structures I have learnt (graphs, trees, stacks, etc)
+
+To execute Path-Finding 
+-Execute MainWindow.jar
+-Select parameters
+-See the magic!
+
