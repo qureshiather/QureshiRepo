@@ -125,7 +125,7 @@ public class MainWindow extends javax.swing.JFrame {
         //String[] args = {"src/" + elements.getSelectedValue(), DelayAmount.getText()};
         String[] args = {elements.getSelectedValue(), DelayAmount.getText()};
         setVisible(false); //you can't see me!
-        Solve.main(args);
+        Solve.main(args); //execute method in Solve, with chosen args
         dispose(); //Destroy the JFrame object 
     }//GEN-LAST:event_ExecuteActionPerformed
 
