@@ -4,7 +4,6 @@ import java.io.*;
 public class Solve {
 
 	public static void main(String[] args) {
-		System.out.println(args[0]);
 		Node u = null, v;
 		DrawMap display;
 		int delay = 0;
