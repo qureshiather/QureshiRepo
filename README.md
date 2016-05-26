@@ -7,7 +7,7 @@
 
 ## Desktop Applications:
 * Beta Phase of FitBit Dashboard Application
-* Completed version will be up in Late March
+	-Team members include: Skeni Atul Patel, Henry Pun, Ather Qureshi, Linxue Ren, David Alexander Tasker, An Qi Xu
 
 ## Mobile Application:
 * Code for my applications 

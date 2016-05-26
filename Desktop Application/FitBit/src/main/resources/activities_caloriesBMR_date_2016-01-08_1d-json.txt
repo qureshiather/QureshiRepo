@@ -1,0 +1,4 @@
+HTTP request URL: https://api.fitbit.com/1/user/-/activities/caloriesBMR/date/2016-01-08/1d.json
+HTTP response code: 200
+HTTP response body:
+{"activities-caloriesBMR":[{"dateTime":"2016-01-08","value":"1609"}]}

@@ -12,7 +12,7 @@ public class Solve {
 		// drawing edges
 		display = new DrawMap(args[0]); // Draw the map
 		try {
-			Map streetMap = new Map(args[0]);
+			Map streetMap = new Map("src/"+ args[0]);
 			//BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 			//System.out.println("Press a key to continue");
 			//String line = in.readLine();

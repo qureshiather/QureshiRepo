@@ -1,0 +1,4 @@
+HTTP request URL: https://api.fitbit.com/1/user/-/friends.json
+HTTP response code: 403
+HTTP response body:
+{"errors":[{"errorType":"insufficient_scope","message":"This application does not have permission to access social data. Visit https://dev.fitbit.com/docs/oauth2 for more information on the Fitbit Web API authorization process."}],"success":false}

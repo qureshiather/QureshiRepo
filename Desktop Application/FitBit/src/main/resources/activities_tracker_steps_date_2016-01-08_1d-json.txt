@@ -1,0 +1,4 @@
+HTTP request URL: https://api.fitbit.com/1/user/-/activities/tracker/steps/date/2016-01-08/1d.json
+HTTP response code: 200
+HTTP response body:
+{"activities-tracker-steps":[{"dateTime":"2016-01-08","value":"10042"}]}

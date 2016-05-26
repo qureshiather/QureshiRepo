@@ -1,0 +1,4 @@
+HTTP request URL: https://api.fitbit.com/1/user/-/activities/recent.json
+HTTP response code: 200
+HTTP response body:
+[{"activityId":90013,"calories":0,"description":"less than 2 mph, strolling very slowly","distance":0,"duration":1941000,"name":"Walk"},{"activityId":15000,"calories":0,"description":"","distance":0,"duration":3464000,"name":"Sport"},{"activityId":20047,"calories":0,"description":"","distance":0,"duration":682000,"name":"Elliptical"}]

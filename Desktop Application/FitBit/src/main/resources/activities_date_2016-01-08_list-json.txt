@@ -1,0 +1,4 @@
+HTTP request URL: https://api.fitbit.com/1/user/-/activities/date/2016-01-08/list.json
+HTTP response code: 400
+HTTP response body:
+{"errors":[{"errorType":"validation","fieldName":"period","message":"Invalid time series period: list"}]}

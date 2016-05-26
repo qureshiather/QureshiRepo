@@ -1,0 +1,20 @@
+0	15000	0	Step-Step-Hooray!	Walk 15,000 steps in one day
+0	250000	1	Step'en Colbert	Walk 250,000 steps over your lifetime
+0	500000	1	Step'en King	Walk 500,000 steps over your lifetime
+0	1000000	1	I would walk 500 miles	Walk 1,000,000 steps over your lifetime
+0	10000000	1	Coast to coast	Walk 10,000,000 steps over your lifetime
+1	10	0	10KMs a day keeps the doctor away	Move 10KM in one day
+1	21	0	Run Weasley	Move 21KM in one day
+1	3650	1	Half-Marathoner	Move 3650KM over your lifetime
+1	7300	1	Marathoner	Move 7300KM over your lifetime
+1	40075	1	Around The World	Move 47,075KM over your lifetime
+2	15	0	Climb to the top	Climb 15 floors in one day
+2	47	0	CN Tower Climb	Climb 47 floors in one day
+2	1250	1	Hillary Climb-ton	Climb 1250 floors over your lifetime
+2	2950	1	Mountain Climber	Climb 2950 floors over your lifetime
+3	2000	0	Stephen Col-burn	Burn 2000 calories in one day
+3	2750	0	Burn-ie Sanders	Burn 2750 calories in one day
+5	325	0	Barack Go-bama	Be active 325 minutes in one day
+5	420	0	Justin Tru-Go	Be active 420 minutes in one day
+8	1250	0	Fred's Best Friend	Achieve a Health Meta Score of 1250
+8	1500	0	Fred's Family	Achieve a Health Meta Score of 1500
