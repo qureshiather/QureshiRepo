@@ -23,10 +23,10 @@ class Customer: public Person
 		float savingsAccount;
 
 		void deposit(float amount, string accountType){
-			if(accountType == "check"){
+			if(accountType.compare("check")){
 				checkingAccount =+ amount;
 			}
-			else if (accountType == "saving"){
+			else if (accountType.compare("saving")){
 				savingsAccount =+ amount;
 			}
 			else{
@@ -35,7 +35,7 @@ class Customer: public Person
 		}
 
 		bool withdraw(float amount, string accountType){
-			if(accountType == "check"){
+			if(accountType.compare("check")){
 				if(amount > checkingAccount){
 					cout << "you have insufficient funds" << endl;
 					return false;
@@ -45,7 +45,7 @@ class Customer: public Person
 					return true;
 				}
 			}
-			else if(accountType == "saving"){
+			else if(accountType.compare("saving")){
 				if(amount > savingsAccount){
 					cout << "you have insufficient funds" << endl;
 					return false;
@@ -59,10 +59,10 @@ class Customer: public Person
 
 		//prints out current balances to screen
 		void printBalance(string accountType){
-			if (accountType == "check"){
+			if (accountType.compare("check")){
 				cout << "Checking: " << checkingAccount << endl;
 			}
-			else if (accountType == "savings"){
+			else if (accountType.compare("saving")){
 				cout << "Savings: " <<savingsAccount << endl;
 			}
 			else{
@@ -104,4 +104,3 @@ int main(){
 
 	return 0;
 }
-
