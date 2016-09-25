@@ -103,6 +103,5 @@ int main(){
 	test.printBalance("check");
 
 	return 0;
-	
 }
 
