@@ -9,9 +9,14 @@ class Person
 	public:
 		string firstName;
 		string lastName;
+		int id;
 
 	void printName(){
 		cout << firstName + " " + lastName << endl;
+	}
+		
+	void printID(){
+		cout << id << end1;
 	}
 };
 
@@ -83,8 +88,16 @@ class maintenancePerson: public Person
 has managerial powers to open and close an account and see the critical 
 details of a particular, or all (at once), customers in a formatted display.
  */
-class Manager
+class Manager: public Person
 {
+	public:
+		//will close accounts of customerAccount highlighted in Parameter 
+		bool accountClose(Customer toDelete){
+		}
+
+		//will printout balances of customers stored in the array
+		void printbalances(string customers[]){
+		}
 
 
 };
