@@ -1,0 +1,52 @@
+       TID PATIENT_ID                            PHYSICIAN_ID
+---------- ---------- ---------------------------------------
+TREATMENT_NAME                         DATE_TREATMENT
+-------------------------------------- --------------
+         1          2                                       3 
+Heart Surgery                          16-08-10      
+
+         2          4                                       2 
+Liver Transplant                       16-08-05      
+
+         3          1                                       5 
+Flu Shot                               16-08-09      
+
+
+       TID PATIENT_ID                            PHYSICIAN_ID
+---------- ---------- ---------------------------------------
+TREATMENT_NAME                         DATE_TREATMENT
+-------------------------------------- --------------
+         4          4                                       8 
+Optical Test                           16-08-22      
+
+         5          3                                       4 
+Brain Transplant                       16-08-12      
+
+         6          9                                       7 
+Heart Bypass                           16-08-02      
+
+
+       TID PATIENT_ID                            PHYSICIAN_ID
+---------- ---------- ---------------------------------------
+TREATMENT_NAME                         DATE_TREATMENT
+-------------------------------------- --------------
+         7          1                                       6 
+Kidney StoneRemoval                    16-08-13      
+
+         8         10                                       1 
+Lung Chemo                             16-08-03      
+
+         9          8                                       3 
+Colonscopy                             16-08-14      
+
+
+       TID PATIENT_ID                            PHYSICIAN_ID
+---------- ---------- ---------------------------------------
+TREATMENT_NAME                         DATE_TREATMENT
+-------------------------------------- --------------
+        10          7                                       2 
+Tumour Removal                         16-08-12      
+
+
+ 10 rows selected 
+

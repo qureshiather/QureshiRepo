@@ -1,0 +1,100 @@
+       CID NAME                      LOCATION
+---------- ------------------------- -------------------------
+                        NURSE_CHARGE_ID
+---------------------------------------
+         1 LakeHead                  Irvine,CA                 
+                                      3
+
+         2 Victoria                  Toronto,ON                
+                                      4
+
+         3 PineValley                London,ON                 
+                                      7
+
+
+       CID NAME                      LOCATION
+---------- ------------------------- -------------------------
+                        NURSE_CHARGE_ID
+---------------------------------------
+         1 LakeHead                  Irvine,CA                 
+                                      3
+
+         2 Victoria                  Toronto,ON                
+                                      4
+
+         3 PineValley                London,ON                 
+                                      7
+
+
+       CID NAME                      LOCATION
+---------- ------------------------- -------------------------
+                        NURSE_CHARGE_ID
+---------------------------------------
+         1 LakeHead                  Irvine,CA                 
+                                      3
+
+         2 Victoria                  Toronto,ON                
+                                      4
+
+         3 PineValley                London,ON                 
+                                      7
+
+
+       NID NAME
+---------- --------------------------------------
+                         CARE_CENTRE_ID CERTIFICATE_TYPE      TELEPHONE
+--------------------------------------- -------------------- ----------
+    SALARY
+----------
+         1 Delatore                               
+                                      1 BC                   4165123029 
+     40000
+
+         2 Campos                                 
+                                      2 RN                   8499380987 
+     60000
+
+       NID NAME
+---------- --------------------------------------
+                         CARE_CENTRE_ID CERTIFICATE_TYPE      TELEPHONE
+--------------------------------------- -------------------- ----------
+    SALARY
+----------
+         3 Christensen                            
+                                      3 RN                   8765678765 
+     50000
+
+         4 Redding                                
+                                      2 BC                   8769087654 
+     70000
+
+       NID NAME
+---------- --------------------------------------
+                         CARE_CENTRE_ID CERTIFICATE_TYPE      TELEPHONE
+--------------------------------------- -------------------- ----------
+    SALARY
+----------
+         5 Dalton                                 
+                                      1 RN                   1225435876 
+     75000
+
+         6 Stark                                  
+                                      3 BC                   8698576489 
+     50000
+
+       NID NAME
+---------- --------------------------------------
+                         CARE_CENTRE_ID CERTIFICATE_TYPE      TELEPHONE
+--------------------------------------- -------------------- ----------
+    SALARY
+----------
+         7 Michel                                 
+                                      2 BC                   8698479085 
+     50000
+
+         8 Wing                                   
+                                      3 RN                   8907890987 
+     65000
+
+ 8 rows selected 
+
