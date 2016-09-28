@@ -10,6 +10,13 @@
 	-ERD diagram of hosptial network
 	-Java program to view Patient Data given a patient ID
 
+
+## Bank Program
+	-Learning to write C++
+	-Writing a program that can service as a bank infrastructure
+	-Currently in Development
+
+
 ## Desktop Applications:
 * Completed FitBit Dashboard
 	-Team members include: Skeni Atul Patel, Henry Pun, Ather Qureshi, Linxue Ren, David Alexander Tasker, An Qi Xu
