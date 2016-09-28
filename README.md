@@ -5,8 +5,13 @@
 * To view, download "Marko Website" Folder
 * open index.html in any browser
 
+## Database Experience Folder
+	-All database statements to generate the sample database is in here
+	-ERD diagram of hosptial network
+	-Java program to view Patient Data given a patient ID
+
 ## Desktop Applications:
-* Beta Phase of FitBit Dashboard Application
+* Completed FitBit Dashboard
 	-Team members include: Skeni Atul Patel, Henry Pun, Ather Qureshi, Linxue Ren, David Alexander Tasker, An Qi Xu
 
 ## Mobile Application:
