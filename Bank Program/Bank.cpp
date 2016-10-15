@@ -11,6 +11,10 @@ class Person
 		string lastName;
 		int id;
 
+	void Person(){
+		id++;
+	}
+
 	void printName(){
 		cout << firstName + " " + lastName << endl;
 	}
@@ -26,6 +30,11 @@ class Customer: public Person
 	public:
 		float checkingAccount;
 		float savingsAccount;
+
+		void Customer(){
+			checkingAccount = 0;
+			savingsAccount = 0;
+		}
 
 		void deposit(float amount, string accountType){
 			if(accountType.compare("check")){
