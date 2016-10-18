@@ -1,143 +1,32 @@
+#include "bank.h"
+
 #include <iostream>
-#include <string>
-#include <time.h>
+#include <fstream>\
 
-using namespace std;
 
-//Parent Class
-class Person
-{
-
-    public:
-        string firstName;
-        string lastName;
-        string password;
-        int id;
-
-    Person(){
-        id++;
-    }
-
-    void printName(){
-        cout << firstName + " " + lastName << endl;
-    }
-
-    void printID(){
-        cout << id << endl;
-    }
-
-    void setPass(string newPass){
-        password = newPass;
-    }
-
-    bool authenticate(int currID, string currPass){
-        if(currID == id && (!currPass.compare(password)))
+bool checkID(int ID){
+    for(int i = 0; i < arraySize; i++){
+        if(cust[i].getID() == ID)
             return true;
-        else
-            return false;
     }
-};
-
-//Derived class
-//Customer IS A person
-class Customer: public Person
-{
-    public:
-        float checkingAccount;
-        float savingsAccount;
-
-        //constructor initialize
-        Customer(){
-            checkingAccount = 0;
-            savingsAccount = 0;
-            id++;
-        }
-
-        void deposit(float amount, string accountType){
-            if(!accountType.compare("check"))
-                checkingAccount = checkingAccount + amount;
-            else if (!accountType.compare("saving"))
-                savingsAccount = savingsAccount + amount;
-            else
-                cout << "You entered an invalid account type" << endl;
-        }
-
-        bool withdraw(float amount, string accountType){
-            if(!accountType.compare("check")){
-                if(amount > checkingAccount){
-                    cout << "you have insufficient funds" << endl;
-                    return false;
-                }
-                else{
-                    checkingAccount -= amount;
-                    return true;
-                }
-            }
-            else if(!accountType.compare("saving")){
-                if(amount > savingsAccount){
-                    cout << "you have insufficient funds" << endl;
-                    return false;
-                }
-                else{
-                    savingsAccount -= amount;
-                    return true;
-                }
-            }
-        }
-
-        //prints out current balances to screen
-        void printBalance(string accountType){
-            if (!accountType.compare("check")){
-                cout << "Checking: " << checkingAccount << endl;
-            }
-            else if (!accountType.compare("saving")){
-                cout << "Savings: " <<savingsAccount << endl;
-            }
-            else{
-                cout << "You entered an invalid account type " << endl;
-            }
-        }
-
-};
-
-//derived class
-//maintenancePerson is a Person
-class MaintenancePerson: public Person
-{
-    public:
-        string password;
-
-   MaintenancePerson(string newPass){
-       password = newPass;
-   }
-};
-
-/*
-has managerial powers to open and close an account and see the critical
-details of a particular, or all (at once), customers in a formatted display.
-
-Manager IS A Person
- */
-class Manager: public Person
-{
-    public:
-        //will close accounts of customerAccount highlighted in Parameter
-        bool accountClose(int IDofCustomerToDelete){
-        }
-
-        //will printout balances of customers stored in the array
-        void printbalances(string customers[]){
-        }
-
-
-};
+    return false;
+}
 
 
 
-//BANK INFO
-Person totalCust[20];
 
 int main(){
+
+    //initialize customers
+
+
+    for(int i = 0; i < arraySize ; i++){
+        manage.accountOpen(&cust[i],"check");
+        cust[i].setID(i);
+        cust[i].deposit(1000+i*20,"check");
+        cout << "ID: " << cust[i].getID() << endl;
+        cout << "CH Balance: " << cust[i].getCheck() << endl;
+    }
 
     char ch;
 
@@ -146,37 +35,289 @@ int main(){
     //Manager/Customer/Maintenenance
 
     do{
-        cout<<"\n\n\n\tMAIN MENU: SELECT YOUR ACCOUNT TYPE";
-        cout<<"\n\n\t01. Main Menu";
+        cout<<"\n\n\tMAIN MENU: SELECT YOUR ACCOUNT TYPE";
         cout<<"\n\n\t01. Customer";
         cout<<"\n\n\t02. Manager";
         cout<<"\n\n\t03. Maintenance";
-        cout<<"\n\n\t04. Exit \n";
+        cout<<"\n\n\tq. Exit \n\n\n";
         cout << "Enter your Input: " << endl;
-
         cin >> ch;
         switch(ch){
-            case '1':
-                cout << "Return to Main Menu...";
-                break;
-            case '4':
-                cout << "exiting...";
-                break;
 
-            //Now we will go into specific account type
-            default:
-                cout << "EnterID" << endl;
-                int ID;
-                cin >> ID;
-                cout << "EnterPass" << endl;
-                string password;
-                cin >> password;
+        //CUSTOMER
+        case '1':
+        {
+            cout << "Welcome Customer! Enter Your ID" << endl;
+            int theID;
+            cin >> theID;
+            if(!checkID(theID)){
+                cout << "We have no record of you! Try Again!" << endl;
+                cout << "Enter any key to Continue" << endl;
+                cin >> ch;
                 break;
+            }
+            else{
+                //code to work with customer
+                do{
+                    cout<<"\n\n\tCUSTOMER MENU FOR ID: " << theID << endl;
+                    cout<<"\n\n\t01. Deposit";
+                    cout<<"\n\n\t02. Withdraw";
+                    cout<<"\n\n\t03. Transfer";
+                    cout<<"\n\n\t04. View Balance";
+                    cout<<"\n\n\t05. See Recent Transactions";
+                    cout<<"\n\n\t09. Main Menu";
+                    cout<<"\n\n\tq. Exit \n\n\n";
+                    cout << "Enter your Input: " << endl;
+                    cin >> ch;
+                    switch(ch){
+                    case 'q':
+                        return 0;
+
+                        //deposit
+                    case '1':
+                        cout << "Select Account" << endl;
+                        cout<<"\n\n\t01. Checking";
+                        cout<<"\n\n\t02. Saving\n\n";
+                        cout << "Enter your Input: " << endl;
+                        cin >> ch;
+                        if (ch == '1'){
+                            cout << "Enter Amount" << endl;
+                            float amount;
+                            cin >> amount;
+                            cust[theID].deposit(amount,"check");
+                        }
+                        else if (ch == '2'){
+                            cout << "Enter Amount" << endl;
+                            float amount;
+                            cin >> amount;
+                            cust[theID].deposit(amount,"saving");
+                        }
+                        else{
+                            cout << "You have pressed an invalid key!" << endl;
+                        }
+                        cout << "Enter any key to Continue" << endl;
+                        cin >> ch;
+                        break;
+
+                        //withdraw
+                    case '2':
+                        cout << "Select Account" << endl;
+                        cout<<"\n\n\t01. Checking";
+                        cout<<"\n\n\t02. Saving\n\n";
+                        cout << "Enter your Input: " << endl;
+                        cin >> ch;
+                        if (ch == '1'){
+                            cout << "Enter Amount" << endl;
+                            float amount;
+                            cin >> amount;
+                            cust[theID].withdraw(amount,"check");
+                        }
+                        else if (ch == '2'){
+                            cout << "Enter Amount" << endl;
+                            float amount;
+                            cin >> amount;
+                            cust[theID].withdraw(amount,"saving");
+                        }
+                        else{
+                            cout << "You have pressed an invalid key!" << endl;
+                        }
+                        cout << "Enter any key to Continue" << endl;
+                        cin >> ch;
+                        break;
+
+                        //Transfer
+                    case '3':
+                        cout << "Select Option" << endl;
+                        cout<<"\n\n\t01. Checking to Saving";
+                        cout<<"\n\n\t02. Saving to Checking \n\n";
+                        cout << "Enter your Input: " << endl;
+                        cin >> ch;
+                        if (ch == '1'){
+                            cout << "Enter Amount" << endl;
+                            float amount;
+                            cin >> amount;
+                            cust[theID].transferToSavings(amount);
+                        }
+                        else if (ch == '2'){
+                            cout << "Enter Amount" << endl;
+                            float amount;
+                            cin >> amount;
+                            cust[theID].transferToCheck(amount);
+                        }
+                        else{
+                            cout << "You have pressed an invalid key!" << endl;
+                        }
+                        cout << "Enter any key to Continue" << endl;
+                        cin >> ch;
+                        break;
+
+
+                        //view balance
+                    case '4':
+                        cout << "Checking: " << cust[theID].getCheck() << endl;
+                        cout << "Savings: " << cust[theID].getSave() << endl;
+                        cout << "Enter any key to Continue" << endl;
+                        cin >> ch;
+                        break;
+                    }
+                }
+                while(ch != '9');
+                break;
+            }
+            break;
         }
 
+            //MANAGER
+        case '2':
+        {
+            cout << "Welcome Manager! Enter Your Password" << endl;
+            string enteredPass;
+            cin >> enteredPass;
+            if(managerPassword != enteredPass){
+                cout << "You have entered an invalid pass" << endl;
+                break;
+            }
+            else{
+                do{
+                    cout<<"\n\n\tMANAGER MENU" << endl;
+                    cout<<"\n\t01. Open/Close Accounts";
+                    cout<<"\n\n\t02. Print Balances";
+                    cout<<"\n\n\t09. Main Menu";
+                    cout<<"\n\n\t0q. Exit\n\n\n";
+                    cout << "Enter your Input: " << endl;
+                    cin >> ch;
+                    switch (ch) {
 
+                    case 'q':
+                        return 0;
 
+                        //open/close accounts Account
+                    case '1':
+                    {
+                        cout << "Write Customer ID" << endl;
+                        int manageID;
+                        cin >> manageID;
+                        if(!checkID(manageID)){
+                            cout << "You have entered an invalid ID!" << endl;
+                            break;
+                        }
+                        else{
+                            do{
+                                cout<<"\n\n\tSELECT ACCOUNT YOU WISH TO CLOSE/OPEN FOR CUST ID: " << manageID << endl;
+                                cout<<"\n\t01. Checking: Open";
+                                cout<<"\n\n\t02. Checking: Close";
+                                cout<<"\n\n\t03. Saving: Open";
+                                cout<<"\n\n\t04. Saving: Close";
+                                cout<<"\n\n\t0q. Exit\n\n\n";
+                                cout << "Enter your Input: " << endl;
+                                cin >> ch;
+                                switch (ch) {
+                                case 'q':
+                                    return 0;
+                                case '1':
+                                    manage.accountOpen(&cust[manageID],"check");
+                                    cout << "Enter any key to Continue" << endl;
+                                    cin >> ch;
+                                    break;
+                                case '2':
+                                    manage.accountClose(&cust[manageID],"check");
+                                    cout << "Enter any key to Continue" << endl;
+                                    cin >> ch;
+                                    break;
+                                case '3':
+                                    manage.accountOpen(&cust[manageID],"saving");
+                                    cout << "Enter any key to Continue" << endl;
+                                    cin >> ch;
+                                    break;
+                                case '4':
+                                    manage.accountClose(&cust[manageID],"saving");
+                                    cout << "Enter any key to Continue" << endl;
+                                    cin >> ch;
+                                    break;
+                                }
+                            }
+                            while(0);
+                        }
+                    }
+
+                        //print balances
+                    case '2':
+                    {
+                        do{
+                            cout<<"\n\n\t SELECT WHAT YOU WANT TO PRINT" << endl;
+                            cout<<"\n\t01. Single Customer Account";
+                            cout<<"\n\n\t02. All Customer Accounts";
+                            cout<<"\n\n\t03. Total Bank Funds";
+                            cout<<"\n\n\t0q. Exit\n\n\n";
+                            cout << "Enter your Input: " << endl;
+                            cin >> ch;
+                            switch(ch){
+                            case 'q':
+                                return 0;
+                            case '1':
+                                cout << "Enter Customer ID to print balance for:" << endl;
+                                int newID;
+                                cin >> newID;
+                                if(checkID(newID)){
+                                    cust[newID].printBalance("check");
+                                    cust[newID].printBalance("saving");
+                                    }
+                                else{
+                                    cout << "No matching ID for that Customer" << endl;
+                                }
+                                cout << "Enter any key to Continue" << endl;
+                                cin >> ch;
+                                break;
+                            case '2':
+                                for(int i = 0; i < arraySize; i++){
+                                    cout << "ID: " << i << "\tChecking: " << cust[i].getCheck() << "\tSaving: " << cust[i].getSave() << endl;
+                                }
+                                cout << "Enter any key to Continue" << endl;
+                                cin >> ch;
+                                break;
+                            case '3':
+                                float totalBankfunds;
+                                for(int i = 0; i < arraySize; i++){
+                                    totalBankfunds += cust[i].getCheck() + cust[i].getSave();
+                                }
+                                cout << "Total Bank Funds: " << totalBankfunds << endl;
+                                cout << "Enter any key to Continue" << endl;
+                                cin >> ch;
+                                break;
+                            }
+                        }
+                        while(0);
+                    }
+
+                        //more cases
+                    }
+
+                }
+                while(ch != '9');
+                break;
+            }
+            break;
+        }
+
+            //MAINTENANCE
+        case '3':
+        {
+            cout << "Welcome Maintenance! Enter Your ID" << endl;
+            string enteredID;
+            cin >> enteredID;
+            if(maintenancePassword != enteredID){
+                cout << "You have entered an invalid ID" << endl;
+                break;
+            }
+            else{
+                //code to start execuation trace
+            }
+            break;
+        }
+        }
     }
-    while(ch != '4');
-        return 0;
+    while(ch != 'q');
+    return 0;
 }
+
+
