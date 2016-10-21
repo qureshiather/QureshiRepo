@@ -31,6 +31,11 @@ public:
         return savingsAccount;
     }
 
+
+    void write(int id, float amount, string accountType){
+
+    }
+
     void deposit(float amount, string accountType){
 
         //CHECKING ACCOUNT
