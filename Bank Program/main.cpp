@@ -12,9 +12,6 @@ bool checkID(int ID){
     return false;
 }
 
-
-
-
 int main(){
 
     //initialize customers
@@ -64,7 +61,6 @@ int main(){
                     cout<<"\n\n\t02. Withdraw";
                     cout<<"\n\n\t03. Transfer";
                     cout<<"\n\n\t04. View Balance";
-                    cout<<"\n\n\t05. See Recent Transactions";
                     cout<<"\n\n\t09. Main Menu";
                     cout<<"\n\n\tq. Exit \n\n\n";
                     cout << "Enter your Input: " << endl;
@@ -129,7 +125,8 @@ int main(){
                     case '3':
                         cout << "Select Option" << endl;
                         cout<<"\n\n\t01. Checking to Saving";
-                        cout<<"\n\n\t02. Saving to Checking \n\n";
+                        cout<<"\n\n\t02. Saving to Checking";
+                        cout<<"\n\n\t03. Transfer To Another Customer's Chequing\n\n";
                         cout << "Enter your Input: " << endl;
                         cin >> ch;
                         if (ch == '1'){
@@ -143,6 +140,23 @@ int main(){
                             float amount;
                             cin >> amount;
                             cust[theID].transferToCheck(amount);
+                        }
+                        else if (ch == '3'){
+                            cout << "Enter Customer ID" << endl;
+                            int id;
+                            cin >> id;
+                            bool check = checkID(id);
+                            if (check == false){
+                                cout << "You Entered an Invalid Customer!" << endl;
+                                cout << "Enter any key to Continue" << endl;
+                                cin >> ch;
+                                break;
+                            }
+                            cout << "Enter Amount to Transfer from Your Chequeing Account" << endl;
+                            float amount;
+                            cin >> amount;
+                            cust[theID].withdraw(amount, "check");
+                            cust[id].deposit(amount, "check");
                         }
                         else{
                             cout << "You have pressed an invalid key!" << endl;
@@ -175,6 +189,8 @@ int main(){
             cin >> enteredPass;
             if(managerPassword != enteredPass){
                 cout << "You have entered an invalid pass" << endl;
+                cout << "Enter any key to Continue" << endl;
+                cin >> ch;
                 break;
             }
             else{
@@ -191,7 +207,7 @@ int main(){
                     case 'q':
                         return 0;
 
-                        //open/close accounts Account
+                    //open/close accounts Account
                     case '1':
                     {
                         cout << "Write Customer ID" << endl;
