@@ -31,6 +31,9 @@
 
 Coding Challenges Folder contains java contains classes I have written to prepare for the coding interview
 
+## Python Networking:
+* contains python code for network communication in UDP using Reliable Data Transfer
+
 ## Path Finding:
 * You need JAVA SDK 1.7 installed
 * on either CMD/Terminal/Unix, while your working directory is the src folder
