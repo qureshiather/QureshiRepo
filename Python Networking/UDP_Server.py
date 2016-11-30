@@ -42,24 +42,35 @@ recv_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 #listen to this socket
 recv_sock.bind((UDP_IP, UDP_PORT))
 
+#CurrentSEQ only changes when it receives a non-corrupt packet
 currentSeq = 0
 
+#Server awaiting
 while True:
+
+	#Socket is ready to receive from client
     data, addr = recv_sock.recvfrom(1024) # buffer size is 1024 bytes
     print ("Waiting for Client")
 
+    #packet received, unpack and check sequence bit
     UDP_Packet = unpacker.unpack(data)
     packet_seq = checkSequence(data)
 
-    if(checkCorrupt(data)):
-        sock.sendto(buildACK(packet_seq, dest))
-        if packet_seq == currentSeq:
-            print ("received from: ", addr)
-            print("received message:", UDP_Packet)
-            if currentState == 0:
-                currentState = 1
-            else:
-                currentState = 0
+    #check if Data is corrupt, will enter if block if NOT corrupt
+    if checkCorrupt(data) and packet_seq == currentSeq:
+        print ("received from: ", addr)
+        print("received message:", UDP_Packet)
+
+        #Send ACK packet back with same sequence bit as what was received (we good)
+        sock.sendto(buildACK(currentSeq, dest)
+
+        #Flip the sequence bit, since we waiting the next packet from cilent
+        if currentSeq == 0:
+            currentSeq = 1
+        else:
+            currentSeq = 0
+
+    #CORRUPT PACKET OR WRONG SEQUENCE BIT
     else:
-        neg_seq = str(1 - currentSeq)
-        sock.sendto(buildACK(neg_seq), dest)
+    	#SEND A ACK with the other sequence bit
+        sock.sendto(buildACK(str(1 - currentSeq)), dest)
