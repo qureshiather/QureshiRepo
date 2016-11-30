@@ -31,6 +31,12 @@ def buildACK(seq):
     UDP_Packet = UDP_Packet_Data.pack(*values)
     return UDP_Packet
 
+def flipper(num):
+	if num == 0:
+		num = 1
+	else:
+		num = 1
+	return num
 
 UDP_IP = "127.0.0.1"
 UDP_PORT = 4000
@@ -57,14 +63,14 @@ while True:
     packet_seq = checkSequence(data)
 
     #check if Data is corrupt, will enter if block if NOT corrupt
-    if checkCorrupt(data) and packet_seq == currentSeq:
+    if checkCorrupt(data) == True and packet_seq == currentSeq:
 
     	#Print the received correct data
         print ("received from: ", addr)
-        print("received message:", UDP_Packet)
+        print ("received message:", UDP_Packet)
 
         #Send ACK packet back with same sequence bit as what was received (we good)
-        sock.sendto(buildACK(currentSeq, dest)
+        sock.sendto(buildACK(currentSeq, dest))
 
         #Flip the sequence bit, to get ready for the next packet from client
         if currentSeq == 0:
