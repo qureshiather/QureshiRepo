@@ -5,7 +5,6 @@ import sys
 import hashlib
 
 
-
 #will return true if not corrupt, and false if corrupt
 def checkCorrupt(bytes):
     UDP_Packet = unpacker.unpack(bytes)
@@ -16,9 +15,9 @@ def checkCorrupt(bytes):
     chksum =  bytes(hashlib.md5(packed_data).hexdigest(), encoding="UTF-8")
     #Compare Checksums to test for corrupt data
     if UDP_Packet[3] == chksum:
-        return true
+        return True
     else:
-        return false
+        return False
 
 #will return 0 or 1 depending on sequence
 def checkSequence(bytes):
@@ -26,36 +25,41 @@ def checkSequence(bytes):
     return UDP_Packet[0]
 
 #Build ACK Packet
-def buildACK(int):
-    values = (1,int,'TestData',chksum)
+def buildACK(seq):
+    values = (1,seq,'TestData',chksum)
     UDP_Packet_Data = struct.Struct('I I 8s 32s')
     UDP_Packet = UDP_Packet_Data.pack(*values)
     return UDP_Packet
 
-#main
-UDP_IP = "127.0.0.1"
-UDP_PORT = 5005
-dest = (UDP_IP, UDP_PORT)
-unpacker = struct.Struct('I I 8s 32s')
 
-#Create the socket and listen
-sock = socket.socket(socket.AF_INET, # Internet
-                     socket.SOCK_DGRAM) # UDP
-sock.bind((UDP_IP, UDP_PORT))
+UDP_IP = "127.0.0.1"
+UDP_PORT = 4000
+
+#Create UDP socket to send and receive
+send_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+recv_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+#listen to this socket
+recv_sock.bind((UDP_IP, UDP_PORT))
+
+currentSeq = 0
 
 while True:
-    #Receive Data
-    data, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
+    data, addr = recv_sock.recvfrom(1024) # buffer size is 1024 bytes
+    print ("Waiting for Client")
+
     UDP_Packet = unpacker.unpack(data)
-    print("received from:", addr)
-    print("received message:", UDP_Packet)
+    packet_seq = checkSequence(data)
 
-    if checkCorrupt(data) == true:
-        sock = socket.socket(socket.AF_INET, # Internet
-                     socket.SOCK_DGRAM) # UDP
-        sock.sendto(buildACK(UDP_Packet[1]), dest)
+    if(checkCorrupt(data)):
+        sock.sendto(buildACK(packet_seq, dest))
+        if packet_seq == currentSeq:
+            print ("received from: ", addr)
+            print("received message:", UDP_Packet)
+            if currentState == 0:
+                currentState = 1
+            else:
+                currentState = 0
     else:
-        sock = socket.socket(socket.AF_INET, # Internet
-                    socket.SOCK_DGRAM) # UDP
-        sock.sendto(buildACK(UDP_Packet[1] - 1), dest)
-
+        neg_seq = str(1 - currentSeq)
+        sock.sendto(buildACK(neg_seq), dest)
