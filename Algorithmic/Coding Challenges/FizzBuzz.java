@@ -1,4 +1,3 @@
-package codinginterview;
 
 public class FizzBuzz {
 	

@@ -1,7 +1,7 @@
-package codinginterview;
-
 import java.util.Scanner;
 
+//This class returns the fibonnaci sequence to a given sequence number
+//The two methods below show different ways of computing the number
 public class fib {
 
 	public static void main(String[] args) {

@@ -1,5 +1,3 @@
-package codinginterview;
-
 public class sumFirst1000Prime {
 	public static void main(String args[]) {
 		int number = 2;
