@@ -27,9 +27,8 @@
     -Shoot squares as they appear 
 
 ## Algorithmic:
-    -This folder contains projects I have made utlizing various data structures I have learnt (graphs, trees, stacks, etc)
-
-## Coding Challenges Folder contains java contains classes I have written to prepare for the coding interview
+    -This folder contains projects I have made utlizing various data structures 
+    -graphs, trees, stacks, etc
 
 ## Python Networking:
     -contains python code for network communication in UDP using Reliable Data Transfer
