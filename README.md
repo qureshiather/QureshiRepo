@@ -21,11 +21,6 @@
     -Completed FitBit Dashboard
 	-Team members include: Skeni Atul Patel, Henry Pun, Ather Qureshi, Linxue Ren, David Alexander Tasker, An Qi Xu
 
-## Mobile Application:
-    -Code for my applications 
-    -Virtual Reality Application - Need Google Cardboard + Android Device to view
-    -Shoot squares as they appear 
-
 ## Algorithmic:
     -This folder contains projects I have made utlizing various data structures 
     -graphs, trees, stacks, etc
