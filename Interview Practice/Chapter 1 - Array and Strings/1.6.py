@@ -13,6 +13,8 @@ def Compress(A):
 		comStr += A[i]
 		comStr += str(skip)
 		i += skip
+	if len(comStr) >= len(A):
+		return A
 	return comStr
 
 def CountLetter(A, i):
@@ -30,6 +32,6 @@ def CountLetter(A, i):
 			end = True
 	return count
 
-string = 'AAAABBBCDDDDGGGGGGGGG'
+string = 'aaaaaaaaaaaaabcd'
 
 print Compress(string)
