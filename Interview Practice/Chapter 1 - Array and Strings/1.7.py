@@ -25,7 +25,13 @@ Matrix[2][2] = 6
 # 8 9 5
 # 6 5 4 
 
-# ez mode - returns Matrix object that I am building from scratch, not in place
-def MatrixNotPlace(Matrix, w, h):
-	return
+# ez mode - returns Matrix object that I am building from scratch
+def rotateSquareMatrix90(m1):
+	n = len(m1)
+	m2 = [[0 for x in range(n)] for y in range(n)]
+	for i in range(0, n):
+		for j in range(0, n):
+			m2[i][j] = m1[(n-1)-j][i]
+	return m2
 
+print rotateSquareMatrix90(Matrix)
