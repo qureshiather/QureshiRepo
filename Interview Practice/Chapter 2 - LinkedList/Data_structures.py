@@ -7,6 +7,17 @@ class Node:
 		self.next = None
 		self.prev = None
 
+	def appendToTail(self, data):
+		"""
+		O(n), will need to traverse and place at end
+		"""
+		newNode = Node(data)
+		pointer = self
+		while(pointer.next != None):
+			pointer = pointer.next
+		pointer.next = newNode
+		newNode.prev = pointer
+
 class Stack:
 	"""
 		LIFO || push, peek, pop, and isEmpty. 
