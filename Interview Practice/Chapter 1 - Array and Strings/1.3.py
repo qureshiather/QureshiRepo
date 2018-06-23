@@ -15,7 +15,7 @@ def replaceSpace(A):
 		i = i + 1
 	return newString
 
-print replaceSpace("Ather is cool")
+print(replaceSpace("Ather is cool"))
 
 
 

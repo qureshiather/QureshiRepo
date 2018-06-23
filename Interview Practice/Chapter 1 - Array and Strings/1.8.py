@@ -7,4 +7,4 @@ def isRotated(str1,str2):
 
 A = 'waterbottle'
 B = 'bottlewater'
-print isRotated(A,B)
+print(isRotated(A,B))

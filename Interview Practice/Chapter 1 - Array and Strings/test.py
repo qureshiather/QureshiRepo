@@ -3,7 +3,6 @@ def judgeCircle(moves):
 	upDown = 0
 	rightLeft = 0
 	for char in moves:
-		print rightLeft
 		if char == 'R':
 			rightLeft += 1
 		if char =='L':
@@ -17,5 +16,5 @@ def judgeCircle(moves):
 	else:
 		return False
 
-moves = 'RR'
-print judgeCircle(moves)
+moves = 'RRLL'
+print(judgeCircle(moves))

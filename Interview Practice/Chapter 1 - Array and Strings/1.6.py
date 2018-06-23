@@ -32,6 +32,8 @@ def CountLetter(A, i):
 			end = True
 	return count
 
-string = 'aaaaaaaaaaaaabcd'
+def main():
+	string = 'aaaaaaaaaaaaabcd'
+	print(Compress(string))
 
-print Compress(string)
+if __name__ == '__main__': main()

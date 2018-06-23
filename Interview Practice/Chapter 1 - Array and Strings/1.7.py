@@ -34,4 +34,7 @@ def rotateSquareMatrix90(m1):
 			m2[i][j] = m1[(n-1)-j][i]
 	return m2
 
-print rotateSquareMatrix90(Matrix)
+def main():
+	print(rotateSquareMatrix90(Matrix))
+
+if __name__ == '__main__': main()

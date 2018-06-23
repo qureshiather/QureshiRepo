@@ -13,6 +13,6 @@ def palindromeChecker(A):
 			return False
 	return True
 
-string = 'Ather'
-print palindromeChecker(string)
+string = 'racecar'
+print(palindromeChecker(string))
 

@@ -14,13 +14,17 @@ def rotateSquareMatrix90(m1):
 			m2[i][j] = m1[(n-1)-j][i]
 	return m2
 
+# TO DO 
 def rotateSquareMatrix90inPlace(mat):
 	n = len(mat)
 	# performing floor
 	cycles = int(n/2)
 	for i in range(0, cycles):
 		for k in range(i,n-i-1):
-			# TO DO 
+			return
 
-rotateSquareMatrix90inPlace(squareMat)
-print squareMat
+def main():
+	rotateSquareMatrix90inPlace(squareMat)
+	print(squareMat)
+
+if __name__ == '__main__': main()
