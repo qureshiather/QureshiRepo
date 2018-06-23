@@ -1,22 +1,27 @@
 class Node:
 	"""
-	Generic Node Class
+	Generic Node Class | Can be doubly or singly
 	"""
 	def __init__(self, data):
+		"""
+			Type argument changes behavior to singly, or doubly
+		"""
 		self.val = data
 		self.next = None
 		self.prev = None
 
-	def appendToTail(self, data):
+	def appendToTail(self, data, typeChar='d'):
 		"""
 		O(n), will need to traverse and place at end
+		typeChar default is d, explictly use s for singly
 		"""
 		newNode = Node(data)
 		pointer = self
 		while(pointer.next != None):
 			pointer = pointer.next
 		pointer.next = newNode
-		newNode.prev = pointer
+		if typeChar == 'd':
+			newNode.prev = pointer
 
 class Stack:
 	"""
