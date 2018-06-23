@@ -19,8 +19,7 @@ def isInFib(n):
 
 # UI main loop 
 if __name__ == '__main__':
-	notExiting = True
-	while(notExiting):
+	while(True):
 		n = input( "Enter Number Check if in Fib, else write x to exit: " )
 		if n == 'x': break
 		n = int(n)
