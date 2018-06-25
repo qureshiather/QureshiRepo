@@ -7,10 +7,10 @@ def kthElement(head, k):
         param 1 is the head Node of linkedList
         param 2 is kth last element count
     """
-    kPointer = head
-    pointer = head
     if k <= 0:
         raise ValueError("K Cannot be 0, or negative")
+    kPointer = head
+    pointer = head
     # Traverse linkedList k times on pointer var
     # index counter is not used, so it named _ apporpriately
     for _ in range(k):
