@@ -4,7 +4,8 @@ from Data_structures import Node
 
 def kthElement(head, k):
     """
-        param 1 is the head Node of linkedList
+        Function will return value of kth last element of singly LinkedList
+        param 1 is the head Node of Singly linkedList
         param 2 is kth last element count
     """
     if k <= 0:
@@ -27,9 +28,9 @@ def kthElement(head, k):
 
 def main():
     head = Node(10)
-    head.appendToTail(20)
-    head.appendToTail(46)
-    head.appendToTail(7654)
+    head.appendToTail(20,'s')
+    head.appendToTail(46,'s')
+    head.appendToTail(7654,'s')
     head.printLinkedList()
     print(kthElement(head,3))
     head.printLinkedList()
