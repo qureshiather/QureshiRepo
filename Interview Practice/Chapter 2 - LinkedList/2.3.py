@@ -1,18 +1,6 @@
-# 2.2 CTCI Function to delete node in middle of LinkedList
+# 2.3 CTCI Function to delete node in middle of LinkedList
 
 from Data_structures import Node
-
-def findNode(head, value):
-    """
-        Return Node reference of Node given a payload value
-        else, it will return None
-    """
-    pointer = head
-    while(pointer != None):
-        if pointer.val == value:
-            return pointer
-        pointer = pointer.next
-    return None
 
 def delMiddleNode(mid):
     """
@@ -37,7 +25,7 @@ def main():
     head.appendToTail(46,'s')
     head.appendToTail(7654,'s')
     head.printLinkedList()
-    midNode = findNode(head,10)
+    midNode = head.findNode(10)
     delMiddleNode(midNode)
     head.printLinkedList()
 

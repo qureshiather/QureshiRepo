@@ -34,6 +34,19 @@ class Node:
 			pointer = pointer.next
 		print(str(pointer.val))
 
+	def findNode(self, value):
+		"""
+			Helper Node to find Node given Value. 
+			Will return Node reference of Node given a payload value
+			else, it will return None
+		"""
+		pointer = self
+		while(pointer != None):
+			if pointer.val == value:
+				return pointer
+			pointer = pointer.next
+		return None
+
 class Stack:
 	"""
 		LIFO || push, peek, pop, and isEmpty. 
