@@ -50,17 +50,6 @@ def removeDupesSingly(head):
 		pointer = pointer.next
 	return head
 
-def printLinkedList(head):
-	"""
-	Helper Method to print downstream nodes, given a head Node
-	"""
-	pointer = head
-	# Cause I want to not put the - after last element
-	while(pointer.next != None):
-		print(str(pointer.val) + ' - ',end='')
-		pointer = pointer.next
-	print(str(pointer.val))
-
 def main():
 	head = Node(10)
 	head.appendToTail(20)
@@ -70,9 +59,9 @@ def main():
 	head.appendToTail(50) # Dupe
 	head.appendToTail(10)
 	head.appendToTail(15)
-	printLinkedList(head)
+	head.printLinkedList()
 	removeDupesDoubly(head) # Should remove Dupes from LinkedList
-	printLinkedList(head)
+	head.printLinkedList()
 	return
 
 if __name__ == '__main__': main()

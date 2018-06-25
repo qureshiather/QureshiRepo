@@ -23,6 +23,17 @@ class Node:
 		if typeChar == 'd':
 			newNode.prev = pointer
 
+	def printLinkedList(self):
+		"""
+		Helper Method to print out the linkedList
+		"""
+		pointer = self
+		# Cause I want to not put the - after last element
+		while(pointer.next != None):
+			print(str(pointer.val) + ' - ',end='')
+			pointer = pointer.next
+		print(str(pointer.val))
+
 class Stack:
 	"""
 		LIFO || push, peek, pop, and isEmpty. 
