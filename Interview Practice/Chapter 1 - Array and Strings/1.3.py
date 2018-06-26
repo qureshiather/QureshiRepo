@@ -6,16 +6,17 @@
 # replace whitespace with %20
 def replaceSpace(A):
 	i = 0
-	newString = ''
+	newString = []
 	while i < len(A):
 		if A[i] != ' ':
-			newString += (A[i])
+			newString.append(A[i])
 		else:
-			newString += ('%20')
+			newString.append('%20')
 		i = i + 1
-	return newString
+	return ''.join(newString)
 
-print(replaceSpace("Ather is cool"))
+if __name__ in '__main__':
+	print(replaceSpace("Ather is cool"))
 
 
 

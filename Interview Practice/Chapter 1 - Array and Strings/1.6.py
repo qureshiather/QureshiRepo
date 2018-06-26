@@ -6,16 +6,16 @@
 def Compress(A):
 	A = A.lower()
 	# make new compressed string
-	comStr = ''
+	comStr = []
 	i = 0
 	while(i <= len(A)-1):
 		skip = CountLetter(A, i)
-		comStr += A[i]
-		comStr += str(skip)
+		comStr.append(A[i])
+		comStr.append(str(skip))
 		i += skip
 	if len(comStr) >= len(A):
 		return A
-	return comStr
+	return ''.join(comStr)
 
 def CountLetter(A, i):
 	letter = A[i]
@@ -32,8 +32,6 @@ def CountLetter(A, i):
 			end = True
 	return count
 
-def main():
+if __name__ == '__main__':
 	string = 'aaaaaaaaaaaaabcd'
 	print(Compress(string))
-
-if __name__ == '__main__': main()

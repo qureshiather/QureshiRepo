@@ -33,7 +33,8 @@ def checkPermutationSort(A,B):
 	# recall that == is checking quality, whereas A is B would check identity 
 	return A == B
 
-string1 = 'ather'
-string2 = 'rehza'
-print checkPermutationSort(string1, string2)
+if __name__ in '__main__':
+	string1 = 'ather'
+	string2 = 'thera'
+	print(checkPermutationSort(string1, string2))
 	

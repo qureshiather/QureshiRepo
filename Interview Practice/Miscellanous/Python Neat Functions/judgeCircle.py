@@ -1,4 +1,6 @@
 
+# Checks to see if given directions of movement of 1 unit each, 
+# , if movements had a circle in there (ended up on a prior path)
 def judgeCircle(moves):
 	upDown = 0
 	rightLeft = 0
@@ -16,5 +18,6 @@ def judgeCircle(moves):
 	else:
 		return False
 
-moves = 'RRLL'
-print(judgeCircle(moves))
+if __name__ in '__main__':
+	moves = 'RRLL'
+	print(judgeCircle(moves))

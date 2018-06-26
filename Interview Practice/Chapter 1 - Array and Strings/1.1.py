@@ -3,17 +3,15 @@
 #What if you cannot use additional data structures?
 
 def checkUnique(input):
-	for i, char1 in enumerate(input):
-		for o, char2 in enumerate(input):
-			o = o + 1
-			if o == len(input)-1: 
-				# string is unique
-				return True 
-			if input[i] == input[o]:
-				 #string in not unique
-				return False
-	return False
-
-string1 = 'Ather'
-print checkUnique(string1)
+	seen = set()
+	for i in range(0,len(input)):
+		if input[i] in seen:
+			return False
+		else:
+			seen.add(input[i])
+	return True
+		
+if __name__ in '__main__':
+	string1 = 'Atrher'
+	print(checkUnique(string1))
 

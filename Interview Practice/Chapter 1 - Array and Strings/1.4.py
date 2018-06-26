@@ -13,6 +13,7 @@ def palindromeChecker(A):
 			return False
 	return True
 
-string = 'racecar'
-print(palindromeChecker(string))
+if __name__ in '__main__':
+	string = 'racecar'
+	print(palindromeChecker(string))
 
