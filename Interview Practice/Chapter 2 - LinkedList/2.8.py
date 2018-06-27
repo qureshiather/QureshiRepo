@@ -3,7 +3,6 @@
 # Specfically, a node's next pointer, points to a earlier node
 
 from Data_structures import Node
-import time
 
 def loopChecker(head):
     visited = set()
