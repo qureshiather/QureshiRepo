@@ -22,7 +22,7 @@ class Node:
 		pointer.next = newNode
 		if typeChar == 'd':
 			newNode.prev = pointer
-
+			
 	def printLinkedList(self):
 		"""
 		Helper Method to print out the linkedList
