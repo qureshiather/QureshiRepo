@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # Remove Dupes with LinkedList
 # How to do if Temporary Buffer not allowed? 
 

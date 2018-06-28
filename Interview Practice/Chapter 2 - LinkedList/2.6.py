@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # CTCI 2.6 | Implement function to check if Singly LinkedList is Palindrome
 
 from Data_structures import Node, Stack

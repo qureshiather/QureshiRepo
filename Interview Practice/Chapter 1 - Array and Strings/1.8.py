@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # Check if str1 or str1 are rotated versinos of eachother. Only call is substring once. 
 
 def isRotated(str1,str2):

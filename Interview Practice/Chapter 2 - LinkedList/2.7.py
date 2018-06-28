@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # CTCI 2.7 Given 2 singly linkedLists, determine if the two lists 
 # intersect, return intersecting node, else return null
 

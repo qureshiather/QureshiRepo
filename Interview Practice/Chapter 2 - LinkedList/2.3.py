@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # 2.3 CTCI Function to delete node in middle of LinkedList
 
 from Data_structures import Node

@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # CTCI 2.8 Given a singly (corrupt) linkedList, return the node
 # the is the start of the loop
 # Specfically, a node's next pointer, points to a earlier node

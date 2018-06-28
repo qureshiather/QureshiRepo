@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # 2.2 CTCI Finding Kth element in list
 
 from Data_structures import Node
