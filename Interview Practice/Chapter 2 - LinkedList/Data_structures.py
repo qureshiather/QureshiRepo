@@ -12,8 +12,6 @@ class Node:
 		"""
 		if data:
 			self.val = data
-		else:
-			self.val = None
 		self.next = None
 		self.prev = None
 
@@ -146,11 +144,9 @@ class TreeNode:
 	"""
 		Binary Tree Node, not Full/Complete/Balanced
 	"""
-	def __init__(self, data=None):
-		if data:
-			self.val = data
-		else:
-			self.val = None
+	def __init__(self, value=None):
+		if value:
+			self.val = value
 		self.left = None
 		self.right = None
 
