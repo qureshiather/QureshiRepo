@@ -6,11 +6,14 @@ class Node:
 	"""
 	Generic Node Class | Can be doubly or singly
 	"""
-	def __init__(self, data):
+	def __init__(self, data=None):
 		"""
 			Type argument changes behavior to singly, or doubly
 		"""
-		self.val = data
+		if data:
+			self.val = data
+		else:
+			self.val = None
 		self.next = None
 		self.prev = None
 
@@ -139,15 +142,66 @@ class Queue:
 		else:
 			return self.tail.val
 
+class TreeNode:
+	"""
+		Binary Tree Node, not Full/Complete/Balanced
+	"""
+	def __init__(self, data=None):
+		if data:
+			self.val = data
+		else:
+			self.val = None
+		self.left = None
+		self.right = None
+
+	def inOrderPrint(self, root):
+		if root != None:
+			self.inOrderPrint(root.left)
+			print(root.val)
+			self.inOrderPrint(root.right)
+		return
+	
+	def preOrderPrint(self, root):
+		if root != None:
+			print(root.val)
+			self.preOrderPrint(root.left)
+			self.preOrderPrint(root.right)
+		return
+	
+	def postOrderPrint(self, root):
+		if root != None:
+			self.postOrderPrint(root.left)
+			self.preOrderPrint(root.right)
+			print(root.val)
+		return
+
 def main():
-	myQueue = Queue()
-	myQueue.add(50)
-	myQueue.add('Test')
-	myQueue.add(50)
-	print(myQueue.remove())
-	print(myQueue.examine())
-	print(myQueue.remove())
-	print(myQueue.examine())
-	print(myQueue.remove())
+	# 1 will test queue, 2 will test Tree
+	test = 2
+	if test == 1:
+		# Queue Test
+		myQueue = Queue()
+		myQueue.add(50)
+		myQueue.add('Test')
+		myQueue.add(50)
+		print(myQueue.remove())
+		print(myQueue.examine())
+		print(myQueue.remove())
+		print(myQueue.examine())
+		print(myQueue.remove())
+	if test == 2:
+		# Visual Representation
+		#
+		#			50
+		#		/ 		 \
+		#     30		  70
+		#    /  \        
+		#  10   40
+		root = TreeNode(50)
+		root.left = TreeNode(30)
+		root.right  = TreeNode(70)
+		root.left.left = TreeNode(10)
+		root.left.right = TreeNode(40)
+		root.postOrderPrint(root)
 
 if __name__ in '__main__': main()
