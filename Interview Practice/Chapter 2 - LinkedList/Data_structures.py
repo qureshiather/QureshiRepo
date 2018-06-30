@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+# This is just an implementatinon of all basic data structures, 
+# built from scratch using Nodes/LinkedList for learning purposes
+
 class Node:
 	"""
 	Generic Node Class | Can be doubly or singly
@@ -134,3 +138,16 @@ class Queue:
 			raise ValueError('Queue has no elements')
 		else:
 			return self.tail.val
+
+def main():
+	myQueue = Queue()
+	myQueue.add(50)
+	myQueue.add('Test')
+	myQueue.add(50)
+	print(myQueue.remove())
+	print(myQueue.examine())
+	print(myQueue.remove())
+	print(myQueue.examine())
+	print(myQueue.remove())
+
+if __name__ in '__main__': main()
