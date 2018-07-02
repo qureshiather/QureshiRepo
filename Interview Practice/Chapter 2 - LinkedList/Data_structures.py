@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # This is just an implementatinon of all basic data structures, 
 # built from scratch using Nodes/LinkedList for learning purposes
+from collections import deque
 
 class Node:
 	"""
@@ -171,9 +172,50 @@ class TreeNode:
 			print(root.val)
 		return
 
+class GraphNode:
+	"""
+		Graph Node, can have many children (pointers to other nodes)
+	"""
+	def __init__(self, value=None):
+		if value:
+			self.val = value
+		self.children = []
+
+	def printDFS(self,root):
+		if not root: 
+			raise ValueError('Node given is None')
+		print('Printing DFS:')
+		visited = set()
+		self.DFSset(root,visited)
+		return
+	
+	def DFSset(self,root,visited):
+		print(root.val)
+		visited.add(root)
+		for u in root.children:
+			if u not in visited:
+				self.DFSset(u,visited)
+		return
+
+	def printBFS(self,root):
+		if not root: 
+			raise ValueError('Node given is None')
+		print('Printing BFS:')
+		seen = deque()
+		visited = set()
+		seen.append(root)
+		while(seen):
+			u = seen.popleft()
+			print(u.val)
+			visited.add(u)
+			for v in u.children:
+				if v not in visited:
+					seen.append(v)
+
+
 def main():
-	# 1 will test queue, 2 will test Tree
-	test = 2
+	# 1 will test queue, 2 will test Tree, 3 will test Graph
+	test = 3
 	if test == 1:
 		# Queue Test
 		myQueue = Queue()
@@ -199,5 +241,27 @@ def main():
 		root.left.left = TreeNode(10)
 		root.left.right = TreeNode(40)
 		root.postOrderPrint(root)
+	if test == 3:
+		# Visual Representation
+		#  A-->B-->C
+		#   \       \
+		#   >D      >E--->F
+		#    \
+		#     >G
+		root = GraphNode('A')
+		BNode = GraphNode('B')
+		CNode = GraphNode('C')
+		DNode = GraphNode('D')
+		ENode = GraphNode('E')
+		FNode = GraphNode('F')
+		GNode = GraphNode('G')
+		root.children.append(BNode)
+		root.children.append(DNode)
+		BNode.children.append(CNode)
+		CNode.children.append(ENode)
+		ENode.children.append(FNode)
+		DNode.children.append(GNode)
+		root.printDFS(root)
+		root.printBFS(root)
 
 if __name__ in '__main__': main()
