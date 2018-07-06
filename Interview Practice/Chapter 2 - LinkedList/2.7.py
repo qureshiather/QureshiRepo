@@ -1,11 +1,12 @@
-#!/usr/bin/python3
-# CTCI 2.7 Given 2 singly linkedLists, determine if the two lists 
+# !/usr/bin/python3
+# CTCI 2.7 Given 2 singly linkedLists, determine if the two lists
 # intersect, return intersecting node, else return null
 
 from Data_structures import Node
 
+
 def intersection(head_a, head_b):
-    if head_a is head_b: 
+    if head_a is head_b:
         return head_a
     if head_a is None or head_b is None:
         return None
@@ -17,17 +18,21 @@ def intersection(head_a, head_b):
     pA = pA.next
     pB = pB.next
     # Break out of while loop if both are null
-    while(pA is not None or pB is not None):
+    while(pA or pB):
         if pA in visited:
             return pA
         if pB in visited:
             return pB
-        if pA is pB: return pA
+        if pA is pB:
+            return pA
         visited.add(pA)
         visited.add(pB)
-        if pA is not None: pA = pA.next
-        if pB is not None: pB = pB.next
+        if pA:
+            pA = pA.next
+        if pB:
+            pB = pB.next
     return None
+
 
 if __name__ in '__main__':
     # Making A LinkedLIst
@@ -46,4 +51,4 @@ if __name__ in '__main__':
     headA.next.next.next.next = Node(53)
     headA.printLinkedList()
     headB.printLinkedList()
-    print(intersection(headA,headB).val)
+    print(intersection(headA, headB).val)

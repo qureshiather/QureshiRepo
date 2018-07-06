@@ -1,9 +1,10 @@
-#!/usr/bin/python3
+# !/usr/bin/python3
 # 2.2 CTCI Finding Kth element in list
 
 from Data_structures import Node
 
-def kthElement(head, k):
+
+def kth_element(head, k):
     """
         Function will return value of kth last element of singly LinkedList
         param 1 is the head Node of Singly linkedList
@@ -27,13 +28,11 @@ def kthElement(head, k):
             kPointer = kPointer.next
     return kPointer.val
 
-def main():
-    head = Node(10)
-    head.appendToTail(20,'s')
-    head.appendToTail(46,'s')
-    head.appendToTail(7654,'s')
-    head.printLinkedList()
-    print(kthElement(head,3))
-    head.printLinkedList()
 
-if __name__ in '__main__': main()
+if __name__ in '__main__':
+    head = Node(10)
+    head.appendToTail(20, 's')
+    head.appendToTail(46, 's')
+    head.appendToTail(7654, 's')
+    head.printLinkedList()
+    print(kth_element(head, 2))

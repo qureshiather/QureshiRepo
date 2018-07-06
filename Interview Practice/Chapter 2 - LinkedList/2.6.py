@@ -1,24 +1,26 @@
-#!/usr/bin/python3
+# !/usr/bin/python3
 # CTCI 2.6 | Implement function to check if Singly LinkedList is Palindrome
 
 from Data_structures import Node, Stack
 
-def isPalindromeUseString(head):
+
+def is_palindrome_node(head):
     string = []
     p = head
     while(p is not None):
         string.append(p.val)
         p = p.next
-    return isPalindromeStr(''.join(string))
+    return is_palindrome_str(''.join(string))
 
-def isPalindromeStr(A):
+
+def is_palindrome_str(A):
     """
-    Determines if String is a palindrome, 
+    Determines if String is a palindrome,
     returns True is yes, otherwise False
     """
     left = 0
     right = len(A)-1
-    while(left<right):
+    while(left < right):
         if A[left] == A[right]:
             left += 1
             right -= 1
@@ -26,7 +28,8 @@ def isPalindromeStr(A):
             return False
     return True
 
-def isPalindromeStack(head):
+
+def is_palindrome_stack(head):
     myStack = Stack()
     p = head
     # First Pass, put all values in Stack
@@ -42,6 +45,7 @@ def isPalindromeStack(head):
             p = p.next
     return True
 
+
 if __name__ in '__main__':
     head = Node('R')
     head.appendToTail('A')
@@ -49,5 +53,5 @@ if __name__ in '__main__':
     head.appendToTail('A')
     head.appendToTail('R')
     head.printLinkedList()
-    print(isPalindromeUseString(head))
-    print(isPalindromeStack(head))
+    print(is_palindrome_node(head))
+    print(is_palindrome_stack(head))

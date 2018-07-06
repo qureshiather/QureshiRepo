@@ -3,9 +3,10 @@
 
 from Data_structures import Node
 
-def partitionLinkedList(head, pValue):
+
+def partition_linked_list(head, pValue):
     """
-    Will Partiion a new linkedList, and 
+    Will Partiion a new linkedList, and
     replace values in place
     """
     # Checking if value is in list
@@ -15,7 +16,7 @@ def partitionLinkedList(head, pValue):
     before = []
     after = []
     p = head
-    while(p != None):
+    while(p):
         if p.val < pValue:
             before.append(p.val)
         elif p.val == pValue:
@@ -30,19 +31,18 @@ def partitionLinkedList(head, pValue):
     new_list.append(pValue)
     new_list.extend(after)
     p = head
-    # iterate through linkedlist and change values 
+    # iterate through linkedlist and change values
     for i in range(len(new_list)):
         p.val = new_list[i]
         p = p.next
     return
 
-def main():
-    head = Node(10)
-    head.appendToTail(46,'s')
-    head.appendToTail(20,'s')
-    head.appendToTail(7654,'s')
-    head.printLinkedList()
-    partitionLinkedList(head, 46)
-    head.printLinkedList()
 
-if __name__ in '__main__': main()
+if __name__ in '__main__':
+    head = Node(10)
+    head.appendToTail(46, 's')
+    head.appendToTail(20, 's')
+    head.appendToTail(7654, 's')
+    head.printLinkedList()
+    partition_linked_list(head, 46)
+    head.printLinkedList()

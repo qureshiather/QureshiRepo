@@ -1,24 +1,26 @@
-#!/usr/bin/python3
+# !/usr/bin/python3
 # CTCI 2.8 Given a singly (corrupt) linkedList, return the node
 # the is the start of the loop
 # Specfically, a node's next pointer, points to a earlier node
 
 from Data_structures import Node
 
-def loopChecker(head):
+
+def loop_checker(head):
     visited = set()
     if head is None or head.next is None:
         raise ValueError("Head or Head.next is None")
     p = head
     visited.add(p)
     p = p.next
-    while(p != None):
+    while(p):
         if p in visited:
             return p
         else:
             visited.add(p)
             p = p.next
     return None
+
 
 if __name__ in '__main__':
     head = Node(10)
@@ -28,6 +30,6 @@ if __name__ in '__main__':
     head.next.next.next = Node(50)
     head.next.next.next.next = Node(53)
     head.next.next.next.next.next = cycleNode
-    # Can not print linkedList, as there's a cycle 
+    # Can not print linkedList, as there's a cycle
     # head.printLinkedList()
-    print(loopChecker(head).val)
+    print(loop_checker(head).val)
