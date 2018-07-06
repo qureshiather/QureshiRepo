@@ -1,8 +1,9 @@
-#!/usr/bin/python3
+# !/usr/bin/python3
 # CTCI 3.4
 # Create a Queue using 2 Stacks
 
-class stackQueue:
+
+class StackQueue:
 
     def __init__(self):
         self.inbox = []
@@ -20,8 +21,9 @@ class stackQueue:
                 self.outbox.append(self.inbox.pop())
         return self.outbox.pop()
 
+
 if __name__ in '__main__':
-    q = stackQueue()
+    q = StackQueue()
     q.enqueue(5)
     q.enqueue(42)
     q.enqueue(512)

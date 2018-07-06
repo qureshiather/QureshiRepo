@@ -156,21 +156,21 @@ class TreeNode:
         self.right = None
 
     def inOrderPrint(self, root):
-        if not root:
+        if root:
             self.inOrderPrint(root.left)
             print(root.val)
             self.inOrderPrint(root.right)
         return
 
     def preOrderPrint(self, root):
-        if not root:
+        if root:
             print(root.val)
             self.preOrderPrint(root.left)
             self.preOrderPrint(root.right)
         return
 
     def postOrderPrint(self, root):
-        if not root:
+        if root:
             self.postOrderPrint(root.left)
             self.preOrderPrint(root.right)
             print(root.val)
@@ -220,7 +220,7 @@ class GraphNode:
 
 if __name__ in '__main__':
     # 1 will test queue, 2 will test Tree, 3 will test Graph
-    test = 3
+    test = 2
     if test == 1:
         # Queue Test
         myQueue = Queue()
