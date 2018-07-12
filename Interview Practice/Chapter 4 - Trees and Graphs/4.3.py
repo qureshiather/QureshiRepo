@@ -14,6 +14,7 @@ class TreeNode:
         self.left = None
         self.right = None
 
+
 class Node:
     """
     Generic Node Class | Can be doubly or singly
@@ -27,7 +28,6 @@ class Node:
         self.next = None
         self.prev = None
 
-    
     def appendToTail(self, data, typeChar='d'):
         """
         O(n), will need to traverse and place at end
@@ -40,7 +40,6 @@ class Node:
         pointer.next = newNode
         if typeChar == 'd':
             newNode.prev = pointer
-    
 
     def printLinkedList(self):
         """
@@ -53,19 +52,20 @@ class Node:
             pointer = pointer.next
         print(str(pointer.val))
 
+
 def tree_to_LL_depth(root):
     """
     :param root: root of binary search tree
     :return: list of linkedLists at each depth (starting depth = 0)
-    Explanation: Using a dict to keep track of which level 
-    each Node is in. And appending that node to result list, 
+    Explanation: Using a dict to keep track of which level
+    each Node is in. And appending that node to result list,
     at that result[level[node]]
     """
     result = []
     level = dict()
     q = deque()
     q.append(root)
-    level[root] = 0 
+    level[root] = 0
     while(q):
         p = q.popleft()
         if p.left:
@@ -81,8 +81,9 @@ def tree_to_LL_depth(root):
         if level[p] >= len(result):
             result.append(Node(p.val))
         else:
-            result[level[p]].appendToTail(p.val,'s')
+            result[level[p]].appendToTail(p.val, 's')
     return result
+
 
 if __name__ in '__main__':
     # Visual Representation
