@@ -19,19 +19,19 @@ class TreeNode:
         self.right = None
 
 
-def in_order(u, stack):
+def in_order(u, list):
     if not u:
         return
-    in_order(u.left, stack)
-    stack.append(u.val)
-    in_order(u.right, stack)
+    in_order(u.left, list)
+    list.append(u.val)
+    in_order(u.right, list)
     return
 
 
 def check_BST(root):
-    stack = []
-    in_order(root, stack)
-    if sorted(stack) == stack:
+    list = []
+    in_order(root, list)
+    if sorted(list) == list:
         return True
     else:
         return False
