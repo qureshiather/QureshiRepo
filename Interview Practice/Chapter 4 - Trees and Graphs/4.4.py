@@ -43,7 +43,7 @@ if __name__ in '__main__':
     root.left.left = TreeNode(10)
     root.left.right = TreeNode(40)
     print(is_balanced(root))
-    # Visual Representation
+    # Visual Representation (Unbalanced BST)
     # 		  50
     # 		 /  \
     #      30   70
@@ -51,10 +51,5 @@ if __name__ in '__main__':
     #    10   40
     #   /
     #  5
-    root2 = TreeNode(50)
-    root2.left = TreeNode(30)
-    root2.right = TreeNode(70)
-    root2.left.left = TreeNode(10)
-    root2.left.right = TreeNode(40)
-    root2.left.left.left = TreeNode(5)
-    print(is_balanced(root2))
+    root.left.left.left = TreeNode(5)
+    print(is_balanced(root))
