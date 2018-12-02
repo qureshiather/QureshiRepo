@@ -4,6 +4,7 @@
 
 def rotate_square_matrix_90(m1):
     n = len(m1)
+    # init empty array of n*n 
     m2 = [[0 for x in range(n)] for y in range(n)]
     for i in range(0, n):
         for j in range(0, n):
