@@ -22,3 +22,4 @@ def palindrome_checker(A):
 if __name__ in '__main__':
     string = 'racecar'
     print(palindrome_checker(string))
+    print(addition(5, 3))
