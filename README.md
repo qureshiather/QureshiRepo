@@ -15,4 +15,5 @@
     -This contains code in Python/Java/Shell that I wrote to do small tasks, 
     mainly to prepare for techincal interviews
     -Many problems in Cracking the Coding Interview
+    -Also sorting algorthms, data structures, dynamic programming
 
