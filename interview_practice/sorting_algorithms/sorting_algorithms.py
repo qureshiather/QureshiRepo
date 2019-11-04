@@ -1,6 +1,10 @@
 import time
 
 def bubble_sort(arr):
+    """
+        Keep swaping adjacent elements, until you don't need
+        to swap anymore
+    """
     sorted = False
     while sorted != True:
         for i in range(len(arr)-1):
@@ -12,8 +16,24 @@ def bubble_sort(arr):
             sorted = True
     return arr
 
+
 def merge_sort(arr):
+    """
+        Divide the array into twos recursively, and sort the smallest pieces
+    """
+    def helper_merge_sort(arr, l, r):
+        left = 0
+        right = len(arr)-1
+        m = len(arr)/2
+        merge_sort(arr, )
+
+    l = 0
+    r = len(arr)-1
+    m = (l+r)/2
+    left = helper_merge_sort(arr, l, m)
+    right = helper_merge_sort(arr, m+1, r)
     pass
+
 
 def insertion_sort(arr):
     if len(arr) == 1:
