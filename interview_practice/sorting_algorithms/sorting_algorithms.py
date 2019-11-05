@@ -65,6 +65,15 @@ def insertion_sort(A):
 
 if __name__ in '__main__':
     A = [4, 1, 2, 454, 5, 3, 20]
-    print(insertion_sort(A))
-    print(bubble_sort(A))
-    print(merge_sort(A))
+
+    start = time.time()
+    insertion_sort(A)
+    print(f'insertion_sort: {time.time()-start}')
+
+    start = time.time()
+    bubble_sort(A)
+    print(f'bubble_sort: {time.time()-start}')
+
+    start = time.time()
+    merge_sort(A)
+    print(f'merge_sort: {time.time()-start}')
