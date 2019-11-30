@@ -1,4 +1,5 @@
 import time
+import random
 
 def bubble_sort(A):
     """
@@ -64,16 +65,21 @@ def insertion_sort(A):
 
 
 if __name__ in '__main__':
-    A = [4, 1, 2, 454, 5, 3, 20]
+    
+    A = [random.randint(0, 16453) for _ in range(0, 10)]
 
     start = time.time()
-    insertion_sort(A)
+    print(insertion_sort(A))
     print(f'insertion_sort: {time.time()-start}')
 
     start = time.time()
-    bubble_sort(A)
+    print(bubble_sort(A))
     print(f'bubble_sort: {time.time()-start}')
 
     start = time.time()
-    merge_sort(A)
+    print(merge_sort(A))
     print(f'merge_sort: {time.time()-start}')
+
+    start = time.time()
+    print(sorted(A))
+    print(f'python_sort: {time.time()-start}')
