@@ -32,6 +32,7 @@ class RailStep(ABC):
     def rollback(self, data: dict, error: Exception):
         """
         Optional method to rollback any state changes that may have occured, exception is passed
+        that was passed in the run method above
         """
         pass
 
